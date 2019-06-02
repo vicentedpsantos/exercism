@@ -16,10 +16,10 @@ class SpaceAge
     @seconds = seconds
   end
 
-  def method_missing(_m)
-    return super unless ORBITAL_PERIODS.key?(_m)
+  def method_missing(m, *args, &block)
+    return super unless ORBITAL_PERIODS.key?(m)
 
-    on_earth / ORBITAL_PERIODS[_m]
+    on_earth / ORBITAL_PERIODS[m]
   end
 
   def respond_to_missing?(method_name, include_private = false)
