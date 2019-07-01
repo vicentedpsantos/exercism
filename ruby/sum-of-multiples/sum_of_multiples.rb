@@ -6,12 +6,12 @@ class SumOfMultiples
   end
 
   def to(number)
-    (1...number).map { |i| multiple?(i) ? i : nil }.compact.sum
+    (1...number).sum { |i| multiple?(i) ? i : 0 }
   end
 
   private
 
   def multiple?(n)
-    true if numbers.any? { |number| n % number == 0 }
+    numbers.any? { |number| n % number == 0 }
   end
 end

@@ -8,6 +8,6 @@ class Series
   def slices(num)
     raise ArgumentError if num > series.length
 
-    series.length.times.map { |i| series.slice(i, num).length == num ? series.slice(i, num) : nil }.compact
+    series.chars.each_cons(num).map(&:join)
   end
 end

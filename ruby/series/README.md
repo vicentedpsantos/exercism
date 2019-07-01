@@ -27,6 +27,27 @@ Most of the methods listed in the article are not methods specifically for Array
 
 * * * *
 
+For installation and learning resources, refer to the
+[Ruby resources page](http://exercism.io/languages/ruby/resources).
+
+For running the tests provided, you will need the Minitest gem. Open a
+terminal window and run the following command to install minitest:
+
+    gem install minitest
+
+If you would like color output, you can `require 'minitest/pride'` in
+the test file, or note the alternative instruction, below, for running
+the test file.
+
+Run the tests from the exercise directory using the following command:
+
+    ruby series_test.rb
+
+To include color from the command line:
+
+    ruby -r minitest/pride series_test.rb
+
+
 ## Source
 
 A subset of the Problem 8 at Project Euler [http://projecteuler.net/problem=8](http://projecteuler.net/problem=8)
