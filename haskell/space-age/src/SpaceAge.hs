@@ -1,5 +1,8 @@
 module SpaceAge (Planet(..), ageOn) where
 
+earthOrbitalPeriodInSeconds :: Float
+earthOrbitalPeriodInSeconds = 31557600.0
+
 data Planet = Mercury
             | Venus
             | Earth
@@ -20,5 +23,5 @@ ageOn Uranus  seconds = transformSeconds seconds 84.016846
 ageOn Neptune seconds = transformSeconds seconds 164.79132
 
 transformSeconds :: Float -> Float -> Float
-transformSeconds seconds orbitalPeriod = seconds / 31557600.0 / orbitalPeriod
+transformSeconds seconds orbitalPeriod = seconds / earthOrbitalPeriodInSeconds / orbitalPeriod
 
