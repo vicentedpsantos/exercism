@@ -1,3 +1,5 @@
+require 'pry'
+
 class Scrabble
   POINTS = {
     1 => %w[A E I O U L N R S T],
@@ -18,10 +20,9 @@ class Scrabble
   def score
     return 0 unless word
 
-    word.split.map { |l| puts l }
-    # score = []
-    # POINTS.map { |point, letters| word.chars.map { |letter| score << point if letters.include? letter } }
-    # score.sum
+    POINTS.map do |score, chars| 
+      word.count(chars.join) * score
+    end.sum
   end
 
   def self.score(word)
