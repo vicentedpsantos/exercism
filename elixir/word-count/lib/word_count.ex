@@ -7,7 +7,17 @@ defmodule WordCount do
   @spec count(String.t()) :: map
   def count(sentence) do
     sentence
-    |> String.split(" ")
+    |> String.downcase
+    |> strip_punctuation
+    |> retrieve_words
     |> Enum.frequencies()
+  end
+
+  defp strip_punctuation(sentence) do
+    Regex.replace(~r/[^[:alnum:]-]/u, sentence, " ")
+  end
+
+  defp retrieve_words(sentence) do
+    ~w/#{sentence}/
   end
 end
