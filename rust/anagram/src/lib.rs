@@ -22,7 +22,7 @@ struct TargetWord<'a> {
 
 impl<'a> TargetWord<'a> {
     fn test(&self, word: &str) -> bool {
-        if self.is_different(&word) && self.is_same_length(&word) && self.is_anagram(&word) {
+        if self.is_same_length(&word) && self.is_different(&word) && self.is_anagram(&word) {
             return true;
         }
 
@@ -39,10 +39,10 @@ impl<'a> TargetWord<'a> {
 
     fn is_anagram(&self, word: &str) -> bool {
         let mut self_chars: Vec<char> = self.value.chars().collect();
-        self_chars.sort_by(|a, b| b.cmp(a));
+        self_chars.sort_unstable();
 
         let mut incoming_chars: Vec<char> = word.chars().collect();
-        incoming_chars.sort_by(|a, b| b.cmp(a));
+        incoming_chars.sort_unstable();
 
         self_chars == incoming_chars
     }
