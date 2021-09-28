@@ -1,0 +1,176 @@
+(defn fault-chance-for [speed]
+  (cond
+    (= 0 speed) 1.0
+    (and (>= 1 speed) (<= 4 speed)) 0.0
+    (and (>= 5 speed) (<= 8 speed)) 0.1
+    (= 9 speed) 0.2
+    (= 10 speed) 0.23)
+  )
+fault-chance-for 0
+fault-chance-for 1
+fault-chance-for 5
+fault-chance-for 10
+(fault-chance-for 10)
+(fault-chance-for 0)
+(production-rate 0)
+(defn production-rate
+  "Returns the assembly line's production rate per hour,
+   taking into account its success rate"
+  [speed]
+  (let [cars (* cars-per-hour speed)
+        faulty-cars (* (fault-chance-for speed) cars)]
+    (- cars faulty-cars))
+)
+(production-rate 0)
+(def cars-per-hour 221)
+(production-rate 0)
+(def cars-per-hour 221)
+(defn fault-chance-for [speed]
+  (cond
+    (= 0 speed) 1.0
+    (and (>= 1 speed) (<= 4 speed)) 0.0
+    (and (>= 5 speed) (<= 8 speed)) 0.1
+    (= 9 speed) 0.2
+    (= 10 speed) 0.23)
+  )
+(defn production-rate
+  "Returns the assembly line's production rate per hour,
+   taking into account its success rate"
+  [speed]
+  (let [cars (* cars-per-hour speed)
+        faulty-cars (* (fault-chance-for speed) cars)]
+    (- cars faulty-cars))
+)
+(production-rate 0)
+(production-rate 1)
+(fault-chance-for 1)
+(fault-chance-for 2)
+(fault-chance-for 3)
+(fault-chance-for 4)
+(fault-chance-for 5)
+(fault-chance-for 0)
+(>= 1 1)
+(def speed 1)
+(and (>= 1 speed) (<= 4 speed)) 
+(>= 1 speed)
+(<= 4 speed)
+(<= speed 4)
+(def cars-per-hour 221)
+(defn fault-chance-for [speed]
+  (cond
+    (= 0 speed) 1.0
+    (and (>= 1 speed) (<= speed 4)) 0.0
+    (and (>= 5 speed) (<= speed 8)) 0.1
+    (= 9 speed) 0.2
+    (= 10 speed) 0.23)
+  )
+(defn production-rate
+  "Returns the assembly line's production rate per hour,
+   taking into account its success rate"
+  [speed]
+  (let [cars (* cars-per-hour speed)
+        faulty-cars (* (fault-chance-for speed) cars)]
+    (- cars faulty-cars))
+)
+(production-rate 1)
+(production-rate 0)
+(production-rate 1)
+(production-rate 2)
+(production-rate 3)
+(production-rate 4)
+(production-rate 5)
+(production-rate 6)
+(production-rate 7)
+(production-rate 8)
+(production-rate 9)
+(production-rate 10)
+(ns cars-assemble)
+(def cars-per-hour 221)
+(defn fault-chance-for [speed]
+  (cond
+    (= 0 speed) 1.0
+    (and (>= speed 5) (<= speed 4)) 0.0
+    (and (>= speed 5) (<= speed 8)) 0.1
+    (= 9 speed) 0.2
+    (= 10 speed) 0.23)
+  )
+(defn production-rate
+  "Returns the assembly line's production rate per hour,
+   taking into account its success rate"
+  [speed]
+  (let [cars (* cars-per-hour speed)
+        faulty-cars (* (fault-chance-for speed) cars)]
+    (- cars faulty-cars))
+)
+(production-rate 5)
+(production-rate 6)
+(production-rate 7)
+(production-rate 8)
+(production-rate 9)
+(production-rate 10)
+(production-rate 1)
+(cars-assmble/production-rate 1)
+(cars-assemble/production-rate 1)
+(def cars-per-hour 221)
+(defn fault-chance-for [speed]
+  (cond
+    (= 0 speed) 1.0
+    (and (>= speed 5) (<= speed 4)) 0.0
+    (and (>= speed 5) (<= speed 8)) 0.1
+    (= 9 speed) 0.2
+    (= 10 speed) 0.23))
+(defn production-rate
+  "Returns the assembly line's production rate per hour,
+   taking into account its success rate"
+  [speed]
+  (let [cars (* cars-per-hour speed)
+        faulty-cars (* (fault-chance-for speed) cars)]
+    (- cars faulty-cars)))
+(defn working-items
+  "Calculates how many working cars are produced per minute"
+  [speed]
+  (/ (production-rate speed) 60))
+(production-rate 1)
+(ns cars-assemble)
+(def cars-per-hour 221)
+(defn fault-chance-for [speed]
+  (cond
+    (= 0 speed) 1.0
+    (and (>= speed 1) (<= speed 4)) 0.0
+    (and (>= speed 5) (<= speed 8)) 0.1
+    (= 9 speed) 0.2
+    (= 10 speed) 0.23))
+(defn production-rate
+  "Returns the assembly line's production rate per hour,
+   taking into account its success rate"
+  [speed]
+  (let [cars (* cars-per-hour speed)
+        faulty-cars (* (fault-chance-for speed) cars)]
+    (Math/floor (- cars faulty-cars))))
+(defn working-items
+  "Calculates how many working cars are produced per minute"
+  [speed]
+  (Math/floor (/ (production-rate speed) 60)))
+(production-rate 10)
+(ns cars-assemble)
+(def cars-per-hour 221)
+(defn fault-chance-for [speed]
+  (cond
+    (= 0 speed) 1.0
+    (and (>= speed 1) (<= speed 4)) 0.0
+    (and (>= speed 5) (<= speed 8)) 0.1
+    (= 9 speed) 0.2
+    (= 10 speed) 0.23))
+(defn production-rate
+  "Returns the assembly line's production rate per hour,
+   taking into account its success rate"
+  [speed]
+  (let [cars (* cars-per-hour speed)
+        faulty-cars (* (fault-chance-for speed) cars)]
+    (- cars faulty-cars)))
+(defn working-items
+  "Calculates how many working cars are produced per minute"
+  [speed]
+  (/ (production-rate speed) 60))
+(production-rate 10)
+(int 4.0)

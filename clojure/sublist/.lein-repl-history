@@ -1,0 +1,64 @@
+(= '("Clojure") '("Clojure"))
+(defn classify [list1 list2] ;; <- arglist goes here
+  (case (= 'list1 'list2)
+    true :equal)
+)
+(classify '(1 2 3) '(1 2 3))
+(defn classify [list1 list2] ;; <- arglist goes here
+  (case (= 'list1 'list2)
+    true :equal
+    false :unequal)
+)
+(classify '(1 2 3) '(1 2 3))
+(subseq? [4 5 6] [1 2 3 4 5 6])
+(defn subseq? [a b]
+  (some #{a} (partition (count a) 1 b)))
+(subseq? [4 5 6] [1 2 3 4 5 6])
+(subseq? [4 5 6 7 8] [1 2 3 4 5 6])
+(find-doc "neg?")
+(doc neg?)
+(doc not)
+(ns sublist
+  (:import [java.util Collections]))
+(Collections/indexOfSubList [1 2 3] [0 1 2 3 4 5])
+(neg? (Collections/indexOfSubList [1 2 3] [0 1 2 3 4 5]))
+(not (neg? (Collections/indexOfSubList [1 2 3] [0 1 2 3 4 5])))
+(not (neg? (Collections/indexOfSubList [1 2 3] [1 2 3])))
+(not (neg? (Collections/indexOfSubList [1 2 3 4 5] [1 2 3])))
+(not (neg? (Collections/indexOfSubList [1 2 3 4 5] [1])))
+(Collections/indexOfSubList [1 2 3 4 5] [1])
+(neg? (Collections/indexOfSubList [1 2 3 4 5] [1]))
+(not (neg? (Collections/indexOfSubList [1 2 3 4 5] [1])))
+(ns sublist
+  (:import [java.util Collections]))
+(Collections/indexOfSubList [1 2 3 4] [1 2])
+(Collections/indexOfSubList [1 2 3 4] [1 2 5])
+(defn- sublist? [list1 list2]
+  (let [index (Collections/indexOfSubList list1 list2)]
+    (cond
+      (= 0 index) true
+      (= -1 index) false)))
+(sublist? [1 2 3] [1 2])
+(sublist? [1 2 3] [1 2 5])
+(sublist? [0 1 2 3 4 5] [3 4 5])
+(ns sublist
+  (:import [java.util Collections]))
+(defn- sublist? [list1 list2]
+  (let [index (Collections/indexOfSubList list1 list2)]
+    (cond
+      (= 0 index) true
+      (= -1 index) false)))
+(sublist? [[0 1 2 3 4 5] [3 4 5])
+(sublist? [0 1 2 3 4 5] [3 4 5])
+(Collections/indexOfSublist [0 1 2 3 4 5] [3 4 5])
+(Collections/indexOfSubList [0 1 2 3 4 5] [3 4 5])
+(ns sublist
+  (:import [java.util Collections]))
+(defn- sublist? [list1 list2]
+  (let [index (Collections/indexOfSubList list1 list2)]
+    (cond
+      (> 0 index) true
+      (< 0 index) false)))
+(sublist? [0 1 2 3 4 5] [3 4 5])
+(> 0 (Collections/indexOfSubList [0 1 2 3 4 5] [3 4 5]))
+(> (Collections/indexOfSubList [0 1 2 3 4 5] [3 4 5]) 0)

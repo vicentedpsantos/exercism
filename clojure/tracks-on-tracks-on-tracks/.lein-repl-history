@@ -1,0 +1,91 @@
+(new-list)
+(defn add-language
+  "Adds a language to the list."
+  [lang lang-list]
+  (conj lang-list lang)
+  )
+(add-language "JavaScript" '("Clojure"))
+(new-list)
+(user/new-list)
+(defn first-language
+  "Returns the first language on the list."
+  [lang-list]
+  (first lang-list)
+  )
+(first-language '("Clojure" "JavaScript"))
+(remove (first-language '("Clojure" "Javascript")) 
+(remove (first-language '("Clojure" "Javascript")) '("Clojure" "Javascript"))
+(pop '("Vicente" "eae"))
+(defn count-languages
+  "Returns the total number of languages on the list."
+  [lang-list]
+  (count lang-list)
+  )
+(count-languages '("Vicente" "eae"))
+(defn remove-language
+  "Removes the the first language added to the list."
+  [lang-list]
+  (pop lang-list)
+  )
+(remove-language '("Vicente" "eae"))
+(defn learning-list
+  "Creates an empty list, adds Clojure and Lisp, removes Lisp, adds
+  Java and JavaScript, then finally returns a count of the total number
+  of languages."
+  []
+  (let [list '()]
+    (conj list "Clojure")
+    (println list)
+    (conj list "Lisp")
+    (println list)
+    (drop list)
+    (println list)
+    (conj list "Java")
+    (println list)
+    (conj list "JavaScript")
+    (println list)
+    (count list)
+    )
+  )
+learning-list
+(learning-list)
+(defn learning-list
+  "Creates an empty list, adds Clojure and Lisp, removes Lisp, adds
+  Java and JavaScript, then finally returns a count of the total number
+  of languages."
+  []
+  (let [list '()]
+    (conj "Clojure" list)
+    (println list)
+    (conj list "Lisp")
+    (println list)
+    (drop list)
+    (println list)
+    (conj list "Java")
+    (println list)
+    (conj list "JavaScript")
+    (println list)
+    (count list)
+    )
+  )
+(learning-list)
+(defn learning-list
+  "Creates an empty list, adds Clojure and Lisp, removes Lisp, adds
+  Java and JavaScript, then finally returns a count of the total number
+  of languages."
+  []
+  (let [list '()]
+    (conj "Clojure" list)
+    (println list)
+    (conj list "Lisp")
+    (println list)
+    (drop list)
+    (println list)
+    (conj list "Java")
+    (println list)
+    (conj list "JavaScript")
+    (println list)
+    (count list)
+    )
+  )
+(learning-list)
