@@ -1,0 +1,15 @@
+(defn acronym [w]
+  (-> w
+      (str/split break-word-regex)))
+(defn acronym [w]
+  (-> w
+      (clojure.string/split break-word-regex)))
+(def break-word-regex #"[\ -]")
+(defn acronym [w]
+  (-> w
+      (clojure.string/split break-word-regex)))
+(acronym "Ruby on Rails")
+(re-seq "Ruby on Rails", (defn acronym [s]
+(re-seq "Ruby on Rails" #"[A-Z][a-z]+|\w+")
+(re-seq #"[A-Z][a-z]+|\w+" "Ruby on Rails")
+(re-seq #"[A-Z][a-z]+|\w+" "HyperText Markup Language")
