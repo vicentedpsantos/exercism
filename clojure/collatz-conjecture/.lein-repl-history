@@ -1,0 +1,11 @@
+(defn print-em [first & rest]
+(println first)
+)
+(print-em "eae")
+(defn print-em [first & rest] (println rest))
+(print-em "eae")
+(print-em "foo" "bar")
+(defn print-em [first & [rest]] (println rest))
+(print-em "foo" "bar")
+(reduced 10)
+(doc reduced)

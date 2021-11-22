@@ -1,0 +1,25 @@
+(clojure.string/trim "        eae           ")
+(ns bob
+  (:require [clojure.string :as str]))
+(defn is-question? [s]
+  (str/ends-with? (str/trim s) "?"))
+(str/ends-with? "eae?" "?")
+(= "VICENTE" "vicente")
+(= "VICENTE" "VICENTE")
+(str/capitalize "vicente")
+(str/upper-case "Vicente")
+(defn is-yelling? [s]
+  (= (str/upper-case s) s))
+(ns bob
+  (:require [clojure.string :as str]))
+(defn is-yelling? [s]
+  (= (str/upper-case s) s))
+(is-yelling ":) ?")
+(is-yelling ":\) ?")
+(is-yelling ":) ?")
+(is-yelling? ":) ?")
+(str/re-find #"[A-Za-z]" ":\) ?")
+(str/re-find #"[A-Za-z]" ":) ?")
+(re-find #"[A-Za-z]" ":) ?")
+(re-find #"[A-Za-z]" "a ?")
+(re-find #"[A-Za-z]" ":) ?")

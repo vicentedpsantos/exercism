@@ -1,0 +1,129 @@
+(re-seq #"\w" "AEIOULNRST")
+(defn transform [source] ;; <- arglist goes here
+  (doseq [[k v ] source] (println k)))
+(etl/transform {1  (re-seq #"\w" "AEIOULNRST")
+                         2  (re-seq #"\w" "DG")
+                         3  (re-seq #"\w" "BCMP")
+                         4  (re-seq #"\w" "FHVWY")
+                         5  (re-seq #"\w" "K")
+                         8  (re-seq #"\w" "JX")
+                         10 (re-seq #"\w" "QZ")}))))
+(transform {1 (etl/transform {1  (re-seq #"\w" "AEIOULNRST")
+                         2  (re-seq #"\w" "DG")
+                         3  (re-seq #"\w" "BCMP")
+                         4  (re-seq #"\w" "FHVWY")
+                         5  (re-seq #"\w" "K")
+                         8  (re-seq #"\w" "JX")
+                         10 (re-seq #"\w" "QZ")}))))
+(transform {1 (re-seq #"\w" "AEIOULNRST")})
+(let new-mappings {})
+(let [new-mappings {}])
+(def new-mappings {})
+(assoc new-mappings "word" 1)
+new-mappings
+(assoc new-mappings "word" 1)
+new-mappings
+(assoc-in new-mappings "word" 1)
+new-mappings
+(assoc-in new-mappings "word" 1)
+(assoc-in new-mappings 1 "word")
+(assoc-in new-mappings "foo" "word")
+ 
+(ns etl
+  (:require [clojure.string :as str]))
+(def new-mappings (atom {}))
+(defn transform [source]
+  (doseq [[points _] source]
+    (doseq [word source] (swap! new-mappings assoc (str/lower-case word) points))
+    (println new-mappings))
+  new-mappings)
+(transform {1 '("a" "b" "c" "d" "e")})
+(def new-mappings {})
+(assoc new-mappings "vicente 1)
+(def new-mappings {})
+(assoc new-mappings "Vicente" 1)
+(assoc new-mappings "a" 1)
+new-mappings
+(def new-mappings
+(let [mapinha {})
+(let [mapinha {}])
+(def new-mappings (let [mapinha {}] (assoc mapinha "Vicente" 1) mapinha))
+new-mappings
+(new-mappings)
+new-mappings
+(def new-mappings (let [mapinha (transient {})] (persistent! (assoc mapinha "Vicente" 1) mapinha)))
+(ns etl
+  (:require [clojure.string :as str]))
+(defn transform [source]
+  (let [new-mappings (transient {})]
+    (doseq [[points words] source]
+      (doseq [word words] (assoc! new-mappings (str/lower-case word) points)))
+    (persistent! new-mappings)))
+(transform {1 (re-seq #"\w" "AEIOULNRST")})
+(transform {1 (re-seq #"\w" "AEIOULNRST") 2 (re-seq #"\w" "DG")})
+(transform {2 (re-seq #"\w" "DG")})
+(transform {1 ["APPLE" "ARTICHOKE"], 2 ["BOAT" "BALLERINA"]})
+(transform {1 (re-seq #"\w" "AEIOULNRST") 2 (re-seq #"\w" "DG")})
+(transform {1  (re-seq #"\w" "AEIOULNRST"))
+                         2  (re-seq #"\w" "DG")
+                         3  (re-seq #"\w" "BCMP")
+                         4  (re-seq #"\w" "FHVWY")
+                         5  (re-seq #"\w" "K")
+                         8  (re-seq #"\w" "JX")
+                         10 (re-seq #"\w" "QZ")}
+                         10 (re-seq #"\w" "QZ")})
+(transform {1 (re-seq #"\w" "AEIOULNRST") 2 (re-seq #"\w" "DG")})
+(transform {1 (re-seq #"\w" "AEIOULNRST") 2 (re-seq #"\w" "DG") {1  (re-seq #"\w" "AEIOULNRST")})
+                         2  (re-seq #"\w" "DG")
+                         3  (re-seq #"\w" "BCMP")
+                         4  (re-seq #"\w" "FHVWY")
+                         5  (re-seq #"\w" "K")
+                         8  (re-seq #"\w" "JX")
+                         10 (re-seq #"\w" "QZ")}
+(transform {1 (re-seq #"\w" "AEIOULNRST") 2 (re-seq #"\w" "DG") 3  (re-seq #"\w" "BCMP")})
+(transform {1  (re-seq #"\w" "AEIOULNRST")
+                         2  (re-seq #"\w" "DG")
+                         3  (re-seq #"\w" "BCMP")
+                         4  (re-seq #"\w" "FHVWY")
+                         5  (re-seq #"\w" "K")
+                         8  (re-seq #"\w" "JX")
+                         10 (re-seq #"\w" "QZ")})
+(defn transform [source]
+  (let [new-mappings (transient {})]
+    (doseq [[points words] source]
+      (doseq [word words]
+        (assoc! new-mappings (str/lower-case word) points)))
+    (persistent! new-mappings)))
+(ns etl
+  (:require [clojure.string :as str]))
+(defn transform [source]
+  (let [new-mappings (transient {})]
+    (doseq [[points words] source]
+      (doseq [word words]
+        (assoc! new-mappings (str/lower-case word) points)))
+    (persistent! new-mappings)))
+(transform {1 ["APPLE" "ARTICHOKE"], 2 ["BOAT" "BALLERINA"]})
+(type ["APPLE" "ARTICHOKE"])
+(type (re-seq #"\w" "AEIOULNRST")
+)
+(type (re-seq #"\w" "AEIOULNRST")
+)
+(type (re-seq #"\w" "AEIOULNRST"))
+(type ["APPLE" "ARTICHOKE"])
+(into [] (type (re-seq #"\w" "AEIOULNRST")))
+(into [] (re-seq #"\w" "AEIOULNRST"))
+(type (into [] (re-seq #"\w" "AEIOULNRST")))
+(re-seq #"\w" "AEIOULNRST")
+(into [] (re-seq #"\w" "AEIOULNRST"))
+(type ["a"])
+(re-seq #"\w" "EAADSADSA")
+(type *1)
+(ns etl
+  (:require [clojure.string :as str]))
+(defn transform [source]
+  (let [new-mappings (transient {})]
+    (doseq [[points words] source]
+      (doseq [word words] (assoc! new-mappings (str/lower-case word) points)))
+    (persistent! new-mappings)))
+(transform {1 (into [] (re-seq #"\w" "AEIOULNRST")) 2 (re-seq #"\w" "DG")})
+(transform {1 (into [] (re-seq #"\w" "AEIOULNRST")) 2 (into [] (re-seq #"\w" "DG"))})
