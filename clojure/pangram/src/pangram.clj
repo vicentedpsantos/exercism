@@ -9,6 +9,6 @@
        set))
 
 (defn pangram? [sentence]
-  (let [char-set (build-charset sentence)]
-    (-> char-set
+  (let [charset (build-charset sentence)]
+    (-> charset
         (every? alphabet))))
