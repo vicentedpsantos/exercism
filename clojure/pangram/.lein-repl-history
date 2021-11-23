@@ -53,3 +53,4 @@
 (pangram? "vicente")
 (pangram? "The quick brown fox jumps over the lazy dog.")
 (clojure.string/lower-case \A)
+(set "vicente")
