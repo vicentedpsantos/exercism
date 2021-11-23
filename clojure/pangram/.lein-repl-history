@@ -1,0 +1,55 @@
+(defn pangram? [sentence]
+  (->> sentence
+       (seq)
+       (into #{})
+       (println)))
+(pangram? "vicente")
+(defn pangram? [sentence]
+  (let [char-set (into #{} (seq sentence))]
+    (map #(contains? char-set %) (alphabet))))'
+    (map #(contains? char-set %) (alphabet))))
+(def alphabet
+  (seq "abcdefghijklmnopqrstuvwxyz"))
+; (defn pangram? [sentence]
+;   (every? true? (map #(contains? (into #{} (seq sentence)) %) (alphabet))))
+(defn pangram? [sentence]
+  (let [char-set (into #{} (seq sentence))]
+    (map #(contains? char-set %) (alphabet))))
+(pangram? "vicente")
+(def alphabet
+  (seq "abcdefghijklmnopqrstuvwxyz"))
+; (defn pangram? [sentence]
+;   (every? true? (map #(contains? (into #{} (seq sentence)) %) (alphabet))))
+(defn pangram? [sentence]
+  (let [char-set (into #{} (seq sentence))]
+    (map #(contains? char-set %) (into #{} (alphabet)))))
+(pangram? "vicente")
+(def char-set (into #{} (seq "vicente")))
+(char-set)
+(def char-set (into #{} (seq "vicente")))
+(char-set
+)
+(seq "vicente")
+(into #{} (seq "vicente"))
+(def char-set (into #{} (seq "vicente")))
+(char-set)
+(defn char-set(into #{} (seq "vicente"))
+)
+(defn char-set (into #{} (seq "vicente")))
+(defn char-set [] (into #{} (seq "vicente")))
+(char-set)
+(contains? (char-set) \a)
+(map #(contains? (char-set) %) (alphabet))
+(map #(contains? (char-set) %) alphabet)
+(def alphabet
+  (seq "abcdefghijklmnopqrstuvwxyz"))
+; (defn pangram? [sentence]
+;   (every? true? (map #(contains? (into #{} (seq sentence)) %) (alphabet))))
+(defn pangram? [sentence]
+  (let [char-set (into #{} (seq sentence))]
+    (->>
+     (map #(contains? char-set %) alphabet)
+     (every? true?))))
+(pangram? "vicente")
+(pangram? "The quick brown fox jumps over the lazy dog.")
+(clojure.string/lower-case \A)
