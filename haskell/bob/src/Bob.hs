@@ -1,6 +1,7 @@
 module Bob (responseFor) where
 
-import qualified Data.Map as Map
+import qualified Data.Map  as Map
+import qualified Data.Char as Char
 
 data Interaction = Question
                  | Shout
@@ -29,8 +30,16 @@ responseFor message =
 
 fetchInteraction :: String -> Interaction
 fetchInteraction message
-    | all (`elem` [' ']) message                    = Silence
-    | all (`elem` ['A'..'Z'] ++ ['?', ' ']) message = ShoutedQuestion
-    | all (`elem` ['A'..'Z'] ++ [' ']) message      = Shout
-    | any (`elem` ['?']) message                    = Question
-    | otherwise                                     = Default
+    | null message                          = Silence
+    | isQuestion message && isShout message = ShoutedQuestion
+    | isShout message                       = Shout
+    | isQuestion message                    = Question
+    | otherwise                             = Default
+
+isShout :: String -> Bool
+isShout message =
+    let uppercasedMessage = map Char.toUpper message
+    in uppercasedMessage == message
+
+isQuestion :: String -> Bool
+isQuestion xs = last xs == '?'
